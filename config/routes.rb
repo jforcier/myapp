@@ -1,4 +1,7 @@
 Myapp::Application.routes.draw do
+  root "pages#home"
+  get "about" => "pages#about"
+  get "search_database" => "pages#search_database"
   resources :listings
 
   # The priority is based upon order of creation: first created -> highest priority.
