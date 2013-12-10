@@ -1,0 +1,62 @@
+<h1>Listings</h1>
+
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :city_cont, "City contains" %>
+    <%= f.text_field :city_cont %>
+  </div>
+    <%= f.label :asking_rate_gteq, "Asking Rate between" %>
+    <%= f.text_field :asking_rate_gteq %>
+    <%= f.label :asking_rate_lteq, "and" %>
+    <%= f.text_field :asking_rate_lteq %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :city, "City" %></th>
+      <th><%= sort_link @search, :address, "Address" %></th>
+      <th>Suite</th>
+      <th><%= sort_link @search, :size, "Size" %></th>
+      <th>Building type</th>
+      <th>Building class</th>
+      <th><%= sort_link @search, :asking_rate, "Asking Rate" %></th>
+      <th>Opex</th>
+      <th>Lease type</th>
+      <th>Brokerage</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.city %></td>
+        <td><%= listing.address %></td>
+        <td><%= listing.suite %></td>
+        <td><%= listing.size %></td>
+        <td><%= listing.building_type %></td>
+        <td><%= listing.building_class %></td>
+        <td><%= listing.asking_rate %></td>
+        <td><%= listing.opex %></td>
+        <td><%= listing.lease_type %></td>
+        <td><%= listing.brokerage %></td>
+        <td><%= listing.notes %></td>
+        <td><%= link_to 'Show', listing %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>
