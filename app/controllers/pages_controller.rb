@@ -5,8 +5,39 @@ class PagesController < ApplicationController
   def about
   end
 
+  def my_profile
+  end
+
   def search_database
   	@search = Listing.search(params[:q])
   	@listings = @search.result
   end
+
+  def for_lease
+  end
+
+  def lease_comps
+  end
+
+  def for_sale
+  end
+
+  def sale_comps
+  end
+
+  def property_directory
+  end
+
+  def my_listings
+  end
+
+  def current_deals
+  end
+
+  def closed_deals
+  end
+
+  def accounts_receivable
+  end
+  
 end
