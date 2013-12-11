@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'ransack'
 
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+gem 'bootstrap-sass', :github => 'thomas-mcdonald/bootstrap-sass'
 
 group :production do
 	gem 'rails_12factor'
