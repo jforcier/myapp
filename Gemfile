@@ -31,6 +31,10 @@ gem 'ransack'
 
 gem 'bootstrap-sass', :github => 'thomas-mcdonald/bootstrap-sass'
 
+gem 'devise', '~> 3.1.1'
+
+gem 'paperclip', '~> 3.0'
+
 group :production do
 	gem 'rails_12factor'
 end

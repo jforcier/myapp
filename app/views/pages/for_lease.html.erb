@@ -1,1 +1,79 @@
-for_lease.html.erb
+<div class="row">
+  <div class="col-md-12"><%= render 'layouts/nav' %></div>
+ </div>
+	<div class="row">
+		<%= render 'layouts/dbsearch' %></div>
+	
+<div class="row spacer">
+<div class="container">
+	<div class="col-md-9">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Search Buildings for Lease</h3>
+		</div>
+		<div class="panel-body">
+
+<!-- City Search -->  
+ <%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :city_cont, "City" %>
+    <%= f.text_field :city_cont %>
+    <div class="row spacer">
+	</div>
+  </div>
+
+<!-- Size Search -->
+<div class="field">
+ <%= f.label :size_gteq, "Size (sf)" %>
+    <%= f.text_field :size_gteq %>
+    <%= f.label :size_lteq, "and" %>
+    <%= f.text_field :size_lteq %>
+    <div class="row spacer">
+  </div>
+</div>
+ 
+<!-- Asking Rate search -->
+<div class="field">
+ <%= f.label :asking_rate_gteq, "Asking Rate ($)" %>
+    <%= f.text_field :asking_rate_gteq %>
+    <%= f.label :asking_rate_lteq, "and" %>
+    <%= f.text_field :asking_rate_lteq %>
+    <div class="row spacer">
+  </div>
+  </div>
+
+<!-- Building Type -->
+
+ <div class="field">
+    <%= f.label :building_type_cont, "Building Type" %>
+    <%= f.text_field :building_type_cont %>
+    <div class="row spacer">
+  </div>
+  </div>
+
+
+<!-- Building Class -->
+
+ <div class="field">
+    <%= f.label :building_class_cont, "Building Class" %>
+    <%= f.text_field :building_class_cont %>
+    <div class="row spacer">
+  </div>
+  </div>
+
+<!-- Search Button -->
+    <div class="actions">
+   	<%= f.submit "Search" %></div>
+  <% end %>
+
+ </div>
+</div>
+</div>
+
+
+
+
+
+
+	
+				

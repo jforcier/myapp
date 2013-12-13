@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <%= image_tag @listing.image.url(:medium) %>
+</p>
 <p>
   <strong>City:</strong>
   <%= @listing.city %>

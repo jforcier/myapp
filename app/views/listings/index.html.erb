@@ -1,23 +1,11 @@
-<h1>Listings</h1>
-
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :city_cont, "City contains" %>
-    <%= f.text_field :city_cont %>
-  </div>
-    <%= f.label :asking_rate_gteq, "Asking Rate between" %>
-    <%= f.text_field :asking_rate_gteq %>
-    <%= f.label :asking_rate_lteq, "and" %>
-    <%= f.text_field :asking_rate_lteq %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+<h1>Available Listings</h1>
 
 
 
 <table>
   <thead>
     <tr>
+      <th>Building Image</th>
       <th><%= sort_link @search, :city, "City" %></th>
       <th><%= sort_link @search, :address, "Address" %></th>
       <th>Suite</th>
@@ -38,6 +26,7 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
+        <td><%= image_tag listing.image.url(:thumb) %></td>
         <td><%= listing.city %></td>
         <td><%= listing.address %></td>
         <td><%= listing.suite %></td>
@@ -60,3 +49,4 @@
 <br>
 
 <%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'Return to Search', for_lease_path %>

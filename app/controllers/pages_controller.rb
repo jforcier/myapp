@@ -9,11 +9,12 @@ class PagesController < ApplicationController
   end
 
   def search_database
-  	@search = Listing.search(params[:q])
-  	@listings = @search.result
+  	
   end
 
   def for_lease
+    @search = Listing.search(params[:q])
+    @listings = @search.result
   end
 
   def lease_comps

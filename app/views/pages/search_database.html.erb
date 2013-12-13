@@ -1,15 +1,5 @@
-Let's Search
-
-
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :city_cont, "City contains" %>
-    <%= f.text_field :city_cont %>
-  </div>
-    <%= f.label :asking_rate_gteq, "Asking Rate between" %>
-    <%= f.text_field :asking_rate_gteq %>
-    <%= f.label :asking_rate_lteq, "and" %>
-    <%= f.text_field :asking_rate_lteq %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+<div class="row">
+  <div class="col-md-12"><%= render 'layouts/nav' %></div>
+ </div>
+  <div class="row">
+    <%= render 'layouts/dbsearch' %></div>

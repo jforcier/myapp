@@ -1,1 +1,137 @@
-sale_comps.html.erb
+<div class="row">
+  <div class="col-md-12"><%= render 'layouts/nav' %></div>
+ </div>
+	<div class="row">
+		<%= render 'layouts/dbsearch' %></div>
+
+<div class ="row spacer">
+<div class="container">
+	<div class="col-md-9">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Find Sale Comps Now</h3>
+		</div>
+	<div class="panel-body">
+<form class="form-horizontal" role="form">
+  
+ <!-- City Search -->
+  
+  <div class="form-group">
+    <label for="inputCity" class="col-md-1 control-label"> City </label>
+    <div class="col-md-6">
+      <input type="search" class="form-control" id="inputCity" placeholder="Enter City">
+    </div>
+   </div>
+
+<!-- Sale Price -->
+
+ <div class="form-group">
+			<label for="SalePrice" class="col-md-1 control-label"> Sale Price($) </label>
+			<div class="col-md-3">
+    	<input type="number" class="form-control" id="inputsaleprice" placeholder="Minimum $">
+    </div>
+    <div class="col-md-3">
+    	<input type="number" class="form-control" id="inputsaleprice" placeholder="Maximum $">
+    </div>
+</div>
+
+<!-- Sale Date -->
+
+<div class="form-group">
+			<label for="SaleDate" class="col-md-1 control-label"> Sale Date </label>
+			<div class="col-md-3">
+    	<input type="date" class="form-control" id="inputdate" placeholder="Earliest">
+    </div>
+    <div class="col-md-3">
+    	<input type="date" class="form-control" id="inputdate" placeholder="Latest">
+    </div>
+</div>
+
+<!-- Building Type Checklist -->
+
+	<div class="form-group">
+			<label for="BuildingType" class="col-md-1 control-label"> Building Type </label>
+		  <div class="col-md-6">
+
+		    <label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox1" value="option1"> Office
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox2" value="option2"> R&D/Flex
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox3" value="option3"> Industrial
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox4" value="option4"> Warehouse
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox6" value="option6"> Multi-Tenant
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox7" value="option7"> Stand-Alone
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" id="inlineCheckbox8" value="option8"> Mixed-Use
+			</label>
+		</div>
+	</div>
+
+<!-- Cap Rate-->
+
+ <div class="form-group">
+			<label for="CapRate" class="col-md-1 control-label"> Cap Rate(%) </label>
+			<div class="col-md-3">
+    	<input type="number" class="form-control" id="inputcap" placeholder="Minimum %">
+    </div>
+    <div class="col-md-3">
+    	<input type="number" class="form-control" id="inputcap" placeholder="Maximum %">
+    </div>
+</div>
+
+<!-- Year Built -->
+
+<div class="form-group">
+			<label for="YearBuilt" class="col-md-1 control-label"> Year Built </label>
+			<div class="col-md-3">
+    	<input type="date" class="form-control" id="inputdate" placeholder="Earliest">
+    </div>
+    <div class="col-md-3">
+    	<input type="date" class="form-control" id="inputdate" placeholder="Latest">
+    </div>
+</div>
+
+<!-- Owner Search -->
+<div class="form-group">
+    <label for="inputowner" class="col-md-1 control-label"> Owner </label>
+    <div class="col-md-6">
+      <input type="search" class="form-control" id="inputowner" placeholder="Enter Owner">
+    </div>
+   </div>
+
+<!-- Procurring Broker -->
+<div class="form-group">
+    <label for="inputprocure" class="col-md-1 control-label"> Procurring Broker </label>
+    <div class="col-md-6">
+      <input type="search" class="form-control" id="inputprocure" placeholder="Procurring Broker">
+    </div>
+   </div>
+
+<!-- Listing Broker -->
+<div class="form-group">
+    <label for="inputlisting" class="col-md-1 control-label"> Listing Broker </label>
+    <div class="col-md-6">
+      <input type="search" class="form-control" id="inputlisting" placeholder="Enter Listing Broker">
+    </div>
+   </div>
+
+<!-- Search Button -->
+
+<div class="form-group">
+    <div class="col-sm-offset-5 col-sm-7">
+      <button type="submit" class="btn btn-primary">Search Comps</button>
+     </div>
+</div>
+</form>
+</div>
+</div>
