@@ -3,89 +3,69 @@
  </div>
 	<div class="row">
 		<%= render 'layouts/dbsearch' %></div>
-
-<div class ="row spacer">
+	
+<div class="row spacer">
 <div class="container">
 	<div class="col-md-9">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title">Search Buildings For Sale</h3>
+			<h3 class="panel-title">Search Buildings for Sale</h3>
 		</div>
-	<div class="panel-body">
-<form class="form-horizontal" role="form">
-  
- <!-- City Search -->
-  
-  <div class="form-group">
-    <label for="inputCity" class="col-md-1 control-label"> City </label>
-    <div class="col-md-6">
-      <input type="search" class="form-control" id="inputCity" placeholder="Enter City">
-    </div>
-   </div>
+		<div class="panel-body">
+
+<!-- City Search -->  
+ <%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :city_cont, "City" %>
+    <%= f.text_field :city_cont %>
+    <div class="row spacer">
+	</div>
+  </div>
 
 <!-- Size Search -->
-
-  <div class="form-group">
-    <label for="inputsf" class="col-md-1 control-label"> Size (sf) </label>
-    <div class="col-md-3">
-    	<input type="number" class="form-control" id="inputsf" placeholder="Minimum sf">
-    </div>
-    <div class="col-md-3">
-    	<input type="number" class="form-control" id="inputsf" placeholder="Maximum sf">
+<div class="field">
+ <%= f.label :size_gteq, "Size (sf)" %>
+    <%= f.text_field :size_gteq %>
+    <%= f.label :size_lteq, "and" %>
+    <%= f.text_field :size_lteq %>
+    <div class="row spacer">
   </div>
 </div>
+ 
+<!-- Asking Rate search -->
+<div class="field">
+ <%= f.label :price_gteq, "Asking Price ($)" %>
+    <%= f.text_field :price_gteq %>
+    <%= f.label :price_lteq, "and" %>
+    <%= f.text_field :price_lteq %>
+    <div class="row spacer">
+  </div>
+  </div>
 
-<!-- Asking For Sale Price search -->
+<!-- Building Type -->
 
-<div class="form-group">
-			<label for="AskingPrice" class="col-md-1 control-label"> Asking Price($) </label>
-			<div class="col-md-3">
-    	<input type="number" class="form-control" id="inputsf" placeholder="Minimum $">
-    </div>
-    <div class="col-md-3">
-    	<input type="number" class="form-control" id="inputsf" placeholder="Maximum $">
-    </div>
-</div>
+ <div class="field">
+    <%= f.label :building_type_cont, "Building Type" %>
+    <%= f.text_field :building_type_cont %>
+    <div class="row spacer">
+  </div>
+  </div>
 
 
-<!-- Building Type Checklist -->
+<!-- Building Class -->
 
-	<div class="form-group">
-			<label for="BuildingType" class="col-md-1 control-label"> Building Type </label>
-		  <div class="col-md-6">
-
-		    <label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox1" value="option1"> Office
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> R&D/Flex
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox3" value="option3"> Industrial
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox4" value="option4"> Warehouse
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox6" value="option6"> Multi-Tenant
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox7" value="option7"> Stand-Alone
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox8" value="option8"> Mixed-Use
-			</label>
-		</div>
-	</div>
-
+ <div class="field">
+    <%= f.label :building_class_cont, "Building Class" %>
+    <%= f.text_field :building_class_cont %>
+    <div class="row spacer">
+  </div>
+  </div>
 
 <!-- Search Button -->
+    <div class="actions">
+   	<%= f.submit "Search" %></div>
+  <% end %>
 
-<div class="form-group">
-    <div class="col-sm-offset-5 col-sm-7">
-      <button type="submit" class="btn btn-primary">Search</button>
-     </div>
-</div>
-</form>
+ </div>
 </div>
 </div>

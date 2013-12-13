@@ -1,0 +1,46 @@
+<h1>Available Sale Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Building Image</td>
+      <th>City</th>
+      <th>Address</th>
+      <th>Size</th>
+      <th>Price</th>
+      <th>Building type</th>
+      <th>Building class</th>
+      <th>Floors</th>
+      <th>Parking</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slistings.each do |slisting| %>
+      <tr>
+        <td><%= image_tag slisting.image.url(:thumb) %></td>
+        <td><%= slisting.city %></td>
+        <td><%= slisting.address %></td>
+        <td><%= slisting.size %></td>
+        <td><%= slisting.price %></td>
+        <td><%= slisting.building_type %></td>
+        <td><%= slisting.building_class %></td>
+        <td><%= slisting.floors %></td>
+        <td><%= slisting.parking %></td>
+        <td><%= slisting.notes %></td>
+        <td><%= link_to 'Show', slisting %></td>
+        <td><%= link_to 'Edit', edit_slisting_path(slisting) %></td>
+        <td><%= link_to 'Destroy', slisting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sale Listing', new_slisting_path %>
+<%= link_to 'Return to Search', for_sale_path %>

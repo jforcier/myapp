@@ -21,6 +21,8 @@ class PagesController < ApplicationController
   end
 
   def for_sale
+    @search = Slisting.search(params[:q])
+    @slistings = @search.result
   end
 
   def sale_comps
